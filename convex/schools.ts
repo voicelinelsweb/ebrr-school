@@ -20,11 +20,11 @@ export const list = query({
         let q: any = ctx.db.query("schools");
 
         if (args.type) {
-            q = q.withIndex("by_type", (i) => i.eq("type", args.type!));
+            q = q.withIndex("by_type", (i: any) => i.eq("type", args.type!));
         } else if (args.status) {
-            q = q.withIndex("by_status", (i) => i.eq("status", args.status!));
+            q = q.withIndex("by_status", (i: any) => i.eq("status", args.status!));
         } else if (args.campBlock) {
-            q = q.withIndex("by_campBlock", (i) =>
+            q = q.withIndex("by_campBlock", (i: any) =>
                 i.eq("campBlock", args.campBlock!)
             );
         }
